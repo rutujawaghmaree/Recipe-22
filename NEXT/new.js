@@ -151,7 +151,7 @@ function searchRecipe() {
             }, 600);
         });
     });
-});
+ } );
 
 // Categories
 document.getElementById("categorySelect").addEventListener("change", function () {
@@ -168,3 +168,5 @@ document.getElementById("categorySelect").addEventListener("change", function ()
             recipe.style.display = "none"; // Hide non-matching recipes
         }
     });
+}
+)
