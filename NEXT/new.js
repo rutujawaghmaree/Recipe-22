@@ -17,7 +17,80 @@ document.addEventListener("DOMContentLoaded", function () {
             searchRecipe();
         });
     }
+
+    // Add authentication check to recipe links
+    addAuthenticationCheck();
 });
+
+// Check if user is logged in (you'll need to implement this based on your session management)
+function isUserLoggedIn() {
+    // This is a simple check - you might want to make an AJAX call to verify session
+    return document.body.dataset.userLoggedIn === 'true';
+}
+
+// Add authentication check to all recipe links
+function addAuthenticationCheck() {
+    const recipeLinks = document.querySelectorAll('.recipe-card a');
+    
+    recipeLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (!isUserLoggedIn()) {
+                e.preventDefault();
+                showLoginWarning();
+            }
+        });
+    });
+}
+
+// Show login warning modal
+function showLoginWarning() {
+    // Create modal if it doesn't exist
+    let modal = document.getElementById('loginWarningModal');
+    if (!modal) {
+        modal = createLoginWarningModal();
+        document.body.appendChild(modal);
+    }
+    
+    modal.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+// Create login warning modal
+function createLoginWarningModal() {
+    const modal = document.createElement('div');
+    modal.id = 'loginWarningModal';
+    modal.className = 'login-warning';
+    
+    modal.innerHTML = `
+        <div class="login-warning-content">
+            <h3>🔒 Login Required</h3>
+            <p>You need to be logged in to view recipe details. Please login or create an account to access our delicious recipes!</p>
+            <div class="login-warning-buttons">
+                <a href="./login/login.php" class="login-btn">Login</a>
+                <a href="./login/signup.php" class="signup-btn">Sign Up</a>
+                <button class="close-btn" onclick="closeLoginWarning()">Maybe Later</button>
+            </div>
+        </div>
+    `;
+    
+    // Close modal when clicking outside
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeLoginWarning();
+        }
+    });
+    
+    return modal;
+}
+
+// Close login warning modal
+function closeLoginWarning() {
+    const modal = document.getElementById('loginWarningModal');
+    if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
 
 // Search function
 function searchRecipe() {
@@ -36,11 +109,12 @@ function searchRecipe() {
             recipe.style.display = "none";
         }
     });
-//Not found
+    //Not found
     if (notFoundMessage) notFoundMessage.style.display = found ? "none" : "block";
     if (featuredRecipesText) featuredRecipesText.style.display = found ? "block" : "none";
 }
- // Save recipe
+
+// Save recipe
 
  document.addEventListener("DOMContentLoaded", function () {
     const recipeCards = document.querySelectorAll(".recipe-card");
@@ -54,38 +128,32 @@ function searchRecipe() {
         card.appendChild(heartIcon);
 
         heartIcon.addEventListener("click", function () {
+            // Add heart beat animation
+            heartIcon.classList.add("favorite");
+            
             if (favorites.includes(recipeName)) {
                 favorites.splice(favorites.indexOf(recipeName), 1);
                 heartIcon.innerHTML = "🤍"; // Unfavorited
+                heartIcon.classList.remove("favorite");
             } else {
                 favorites.push(recipeName);
                 heartIcon.innerHTML = "❤️"; // Favorited
+                heartIcon.classList.add("favorite");
             }
 
             localStorage.setItem("favorites", JSON.stringify(favorites));
+            
+            // Remove animation class after animation completes
+            setTimeout(() => {
+                if (!favorites.includes(recipeName)) {
+                    heartIcon.classList.remove("favorite");
+                }
+            }, 600);
         });
     });
 });
 
-
-//categories
-/*document.addEventListener("DOMContentLoaded", function() {
-    const categorySelect = document.getElementById("categorySelect");
-    const recipeCards = document.querySelectorAll(".recipe-card");
-
-    categorySelect.addEventListener("change", function() {
-        const selectedCategory = this.value;
-
-        recipeCards.forEach(card => {
-            if (card.dataset.category === selectedCategory || selectedCategory === "all") {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
-    });
-});*/
-
+// Categories
 document.getElementById("categorySelect").addEventListener("change", function () {
     let selectedCategory = this.value;
     let recipes = document.querySelectorAll(".recipe-card");
@@ -100,4 +168,3 @@ document.getElementById("categorySelect").addEventListener("change", function ()
             recipe.style.display = "none"; // Hide non-matching recipes
         }
     });
-});

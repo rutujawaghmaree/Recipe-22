@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="./log.css">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -56,15 +56,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header>
 
 
-    <h1>Login</h1>
-    <form method="POST" action="">
-        <section class="hero" >
-        <input class="login-input" type="text" name="username" placeholder="Username" required > 
-        <br>
-        <input class="login-input" type="password" name="password" placeholder="Password" required>
-        <br>
-        <button type="submit">Login</button>
+    <section class="hero">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Welcome Back!</h1>
+                <p>Sign in to access your favorite recipes</p>
+            </div>
+            
+            <form method="POST" action="" class="login-form">
+                <div class="input-group">
+                    <input class="login-input" type="text" name="username" placeholder="Username" required>
+                    <span class="input-icon">👤</span>
+                </div>
+                
+                <div class="input-group">
+                    <input class="login-input" type="password" name="password" placeholder="Password" required>
+                    <span class="input-icon">🔒</span>
+                </div>
+                
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>Don't have an account? <a href="signup.php">Create one here</a></p>
+            </div>
+        </div>
         </section>
-    </form>
 </body>
 </html>

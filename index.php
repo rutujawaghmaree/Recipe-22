@@ -9,7 +9,7 @@ session_start();
     <title>RECIPE HUB | Rutuja</title>
 </head>
 
-<body>
+<body data-user-logged-in="<?php echo isset($_SESSION['user_id']) ? 'true' : 'false'; ?>">
 
     <header>
         <div class="container">
@@ -65,21 +65,21 @@ session_start();
                 <img src="./NEXT/dish-1.jpg">
                 <h2>Strawberry Curd</h2>
                 <p>A creamy, tangy dessert made with fresh strawberries and rich custard.</p>
-                <a href="./card/strawberry.html">View Recipe</a>
+                <a href="./card/strawberry.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Paneer Tikka" data-category="snacks">
                 <img src="./NEXT/paneertikka.jpg">
                 <h2>Paneer Tikka</h2>
                 <p>Spiced, grilled paneer cubes marinated in yogurt and aromatic spices.</p>
-                <a href="./card/paneertikka.html">View Recipe</a>
+                <a href="./card/paneertikka.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Belgian Kebab" data-category="snacks">
                 <img src="./NEXT/dish-3.jpg">
                 <h2>Belgian Kebab</h2>
                 <p>Delicious grilled kebabs infused with a blend of European spices.</p>
-                <a href="./card/belgiankebab.html">View Recipe</a>
+                <a href="./card/belgiankebab.html"><span>View Recipe</span></a>
             </div>
 
 
@@ -88,14 +88,14 @@ session_start();
                 <img src="./NEXT/dish-5.jpg">
                 <h2>Zhanzhanit Misal</h2>
                 <p>A spicy Maharashtrian delicacy made with sprouted lentils and a fiery curry.</p>
-                <a href="./card/zhanzhanitmisal.html">View Recipe</a>
+                <a href="./card/zhanzhanitmisal.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Ice Cream" data-category="dessert">
                 <img src="./NEXT/ice.jpg">
                 <h2>Ice Cream</h2>
                 <p>Rich and creamy frozen dessert in various flavors to satisfy your sweet cravings.</p>
-                <a href="./card/icecream.html">View Recipe</a>
+                <a href="./card/icecream.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Pasta" data-category="Snacks">
@@ -103,63 +103,63 @@ session_start();
                 <h2>Pasta</h2>
                 <p >Classic Italian dish made with al dente pasta and a choice of flavorful
                     sauces.</p>
-                <a href="./card/pasta.html">View Recipe</a>
+                <a href="./card/pasta.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Biryani" data-category="main-course">
                 <img src="./NEXT/biryani.jpg">
                 <h2>Biryani</h2>
                 <p>Fragrant and spicy rice dish cooked with tender meat and aromatic spices.</p>
-                <a href="./card/biryani.html">View Recipe</a>
+                <a href="./card/biryani.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Butter Chicken" data-category="main-course">
                 <img src="./NEXT/butterchicken.jpg">
                 <h2>Butter Chicken</h2>
                 <p>Creamy tomato-based curry with tender chicken pieces and rich Indian spices.</p>
-                <a href="./card/butterchicken.html">View Recipe</a>
+                <a href="./card/butterchicken.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Masala Dosa" data-category="snacks">
                 <img src="./NEXT/masaladosa.jpg">
                 <h2>Masala Dosa</h2>
                 <p>South Indian crispy rice crepe filled with spiced potato filling.</p>
-                <a href="./card/masaladosa.html">View Recipe</a>
+                <a href="./card/masaladosa.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Rajma Chawal" data-category="main-course">
                 <img src="./NEXT/rajmachawal.jpg">
                 <h2>Rajma Chawal</h2>
                 <p>Comforting combination of red kidney bean curry served with steamed rice.</p>
-                <a href="./card/rajmachawal.html">View Recipe</a>
+                <a href="./card/rajmachawal.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Pani Puri" data-category="snacks">
                 <img src="./NEXT/panipuri.jpg">
                 <h2>Pani Puri</h2>
                 <p>Crunchy puris filled with spicy and tangy flavored water and potato mixture.</p>
-                <a href="./card/panipuri.html">View Recipe</a>
+                <a href="./card/panipuri.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Gulab Jamun" data-category="dessert">
                 <img src="./NEXT/gulabjamun.jpg">
                 <h2>Gulab Jamun</h2>
                 <p>Soft deep-fried balls soaked in rose-flavored sugar syrup, a classic Indian dessert.</p>
-                <a href="./card/gulabjamun.html">View Recipe</a>
+                <a href="./card/gulabjamun.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Chole Bhature" data-category="main-course">
                 <img src="./NEXT/cholebhature.jpg">
                 <h2>Chole Bhature</h2>
                 <p>Spicy chickpea curry served with deep-fried bread. A Delhi street food staple!</p>
-                <a href="./card/cholebhature.html">View Recipe</a>
+                <a href="./card/cholebhature.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Pav Bhaji" data-category="snacks">
                 <img src="./NEXT/pavbhaji.jpg">
                 <h2>Pav Bhaji</h2>
                 <p>A buttery, spiced vegetable mash served with soft toasted buns</p>
-                <a href="./card/pavbhaji.html">View Recipe</a>
+                <a href="./card/pavbhaji.html"><span>View Recipe</span></a>
             </div>
 
 
@@ -167,63 +167,63 @@ session_start();
                 <img src="./NEXT/vegbiryani.jpg">
                 <h2>Veg Biryani</h2>
                 <p>Fragrant basmati rice layered with spiced vegetables, saffron, and fried onions </p>
-                <a href="./card/vegbiryani.html">View Recipe</a>
+                <a href="./card/vegbiryani.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Samosa" data-category="snacks">
                 <img src="./NEXT/samosa.jpg">
                 <h2>Samosa</h2>
                 <p>Golden, crispy triangles filled with spiced potatoes and peas</p>
-                <a href="./card/samosa.html">View Recipe</a>
+                <a href="./card/samosa.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Dhokla" data-category="snacks">
                 <img src="./NEXT/dhokla.jpg">
                 <h2>Dhokla</h2>
                 <p>A fluffy, steamed savory cake made from fermented gram flour batter</p>
-                <a href="./card/dhokla.html">View Recipe</a>
+                <a href="./card/dhokla.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Palak Paneer" data-category="main">
                 <img src="./NEXT/palakpaneer.jpg">
                 <h2>Palak Paneer</h2>
                 <p>Soft paneer cubes in a creamy spinach gravy — healthy, flavorful</p>
-                <a href="./card/palakpaneer.html">View Recipe</a>
+                <a href="./card/palakpaneer.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Aloo Paratha" data-category="snacks">
                 <img src="./NEXT/aloparatha.jpg">
                 <h2>Aloo Paratha</h2>
                 <p>Stuffed flatbread filled with spiced mashed potatoes best with curd</p>
-                <a href="./card/aloparatha.html">View Recipe</a>
+                <a href="./card/aloparatha.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Rasgulla" data-category="dessert">
                 <img src="./NEXT/rasgulla.jpg">
                 <h2>Rasgulla</h2>
                 <p>Soft and spongy cheese balls soaked in light sugar syrup </p>
-                <a href="./card/rasgulla.html">View Recipe</a>
+                <a href="./card/rasgulla.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Prawn Masala" data-category="main">
                 <img src="./NEXT/prawnsmasala.jpg">
                 <h2>Prawn Masala</h2>
                 <p>Juicy prawns cooked in a fiery, flavorful masala gravy best with butter naan</p>
-                <a href="./card/prawnsmasala.html">View Recipe</a>
+                <a href="./card/prawnsmasala.html"><span>View Recipe</span></a>
             </div>
 
             <div class="recipe-card" data-name="Vada Pav" data-category="snacks">
                 <img src="./NEXT/vadapav.jpg">
                 <h2>Vada Pav</h2>
                 <p> A spicy potato fritter tucked in a bun, served with chutneys </p>
-                <a href="./card/vadapav.html">View Recipe</a>
+                <a href="./card/vadapav.html"><span>View Recipe</span></a>
             </div>
 
 
         </div>
 
         <div id="notFound" class="hidden">
-            <h2>Oops! Recipe Not Found!</h2>
+            <h2>🔍 Oops! Recipe Not Found!</h2>
             <p>We couldn't find the recipe you're looking for. Try searching for something else!</p>
         </div>
     </section>

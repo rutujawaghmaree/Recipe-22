@@ -2,20 +2,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box ;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 body{
     width: 100%;
     min-height: 100vh;
-    background-color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-attachment: fixed;
 }
 header{
-    height: 70px;
+    height: 90px;
     width: 100%;
-    background-color: black;
-    color: beige;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    color: white;
     display: flex;
-    
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 h1{
     height: 35px;
@@ -28,10 +30,12 @@ h1{
     justify-content: space-between; 
 }
 .logo{
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
-    margin-right: auto; /* Pushes logo to the left */
-    text-align: left; 
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 .nav-list{
     display: none;
@@ -41,116 +45,173 @@ nav ul li{
     display: inline;
     margin-right: 10px;
     font-weight: 550;
-    font-size: 20px;
-}
-
-.login-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align:left;
-}
-h2 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-input[type="text"], input[type="password"] {
-    width: 700px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #0aa33d;
-    border-radius: 5px;
-    box-sizing: border-box;
-    
-}
-button {
-    width: 50%;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 500px; 
-    justify-content: center
-}
-
-
-button:hover {
-    background-color: #218838;
-}
-.form-footer {
-    margin-top: 20px;
-    text-align: left;
-}
-.form-footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-.form-footer a:hover {
-    text-decoration: underline;
-}
-h1{
-    text-align: center;
+    font-size: 18px;
 }
 
 .hero{
     width: 100%;
-    height: 550px;
-    background: url(heo-image.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: antiquewhite;
-    text-align: center;
-    padding: 140px 0; 
-}
-.hero-section input[type="text"],
-.hero-section input[type="password"] {
-    width: 500px; /* Adjust width as needed */
-    display: block;
-    margin: 10px auto; /* Center the elements */
-    padding: 8px;
-    text-align: left;
-
-}
-.logo h2{
-    margin-right: auto; /* Pushes logo to the left */
-    text-align: left; /* Ensures text alignment */
-    font-size: larger;
+    min-height: calc(100vh - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
 }
 
-/*SIGHNUP*/
-
-.hero-section {
-    text-align: center;
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
     padding: 50px;
-
-
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.hero-section input {
-    width: 300px;
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+.login-header {
+    margin-bottom: 40px;
 }
-.hero-section button {
-    background-color:#218838;
+
+.login-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.login-header p {
+    color: #666;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.login-form {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 18px 50px 18px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.login-input:focus {
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.input-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+.login-input:focus + .input-icon {
+    color: #667eea;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
     color: white;
-    padding: 10px 20px;
     border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
-a{
-    color:white;
+.login-btn:hover {
+    background: linear-gradient(45deg, #764ba2, #667eea);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+}
+
+.login-btn:active {
+    transform: translateY(-1px);
+}
+
+.login-footer {
+    text-align: center;
+}
+
+.login-footer p {
+    color: #666;
+    font-size: 15px;
+}
+
+.login-footer a {
+    color: #667eea;
     text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.login-input{
-    width: 30rem !important;
+.login-footer a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
 
+a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #667eea;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 30px 25px;
+        margin: 20px;
+    }
+    
+    .login-header h1 {
+        font-size: 28px;
+    }
+    
+    .login-input {
+        padding: 15px 45px 15px 18px;
+        font-size: 15px;
+    }
+    
+    .login-btn {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .nav-list {
+        display: block;
+    }
 }
