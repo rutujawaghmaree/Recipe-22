@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesss.css">
+    <title>RECIPE HUB</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">RECIPE HUB</h1>
+        <nav>
+            <div class="menu-icon">&#9776;</div>
+            <ul class="nav_list">
+                <li><a href="abc.html">HOME</a></li>
+                <li><a href="support.html">SUPPORT</a></li>
+                <li><a href="http://127.0.0.1:5500/newwebsiteteri/contac.html">CONTACT</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <section class="categories">
+            <div class="category-dropdown">
+                <select id="categorySelect">
+                    <option value="all">Categories</option>
+                    <option value="dessert">Desserts</option>
+                    <option value="main-course">Main Course</option>
+                    <option value="snacks">Snacks</option>
+                </select>
+            </div>
+        </section>
+        <div class="hero-section">
+            <h2>WELCOME TO RECIPE HUB</h2>
+            <form action="#" class="search-box">
+                <input type="text" id="searchInput" placeholder="Search Recipe...">
+                <button type="button" onclick="searchRecipe()">Search</button>
+            </form>
+        </div>
+    </section>
+    
+    <section class="recipes">
+        <h2 id="featuredRecipes">FEATURED RECIPES</h2>
+        
+        <div class="recipe-section">
+            <div class="recipe-card" data-name="Strawberry Curd" data-category="dessert">
+                <img src="dish-1.jpg" >
+                <h2>Strawberry Curd</h2>
+                <p>A creamy, tangy dessert made with fresh strawberries and rich custard.</p>
+                <a href="http://127.0.0.1:5500/Recipe%20card/index.html">View Recipe</a>
+            </div>
+            
+            <div class="recipe-card" data-name="Paneer Tikka" data-category="snacks">
+                <img src="paneertikka.jpg">
+                <h2>Paneer Tikka</h2>
+                <p>Spiced, grilled paneer cubes marinated in yogurt and aromatic spices.</p>
+                <a href="https://www.google.co.in/">View Recipe</a>
+            </div>
+   
+            <div class="recipe-card" data-name="Belgian Kebab" data-category="snacks">
+                <img src="dish-3.jpg">
+                <h2>Belgian Kebab</h2>
+                <p>Delicious grilled kebabs infused with a blend of European and Middle Eastern spices.</p>
+                <a href="belgian-kebab.html">View Recipe</a>
+            </div>
+            
+            <div class="recipe-card" data-name="Lavish Diet Bowl" data-category="main-course">
+                <img src="dish-4.jpg">
+                <h2>Lavish Diet Bowl</h2>
+                <p>A nutritious and flavorful meal loaded with fresh vegetables and lean proteins.</p>
+                <a href="lavish-diet.html">View Recipe</a>
+            </div>
+            
+            <div class="recipe-card" data-name="Zhanzhanit Misal" data-category="snacks">
+                <img src="dish-5.jpg">
+                <h2>Zhanzhanit Misal</h2>
+                <p>A spicy Maharashtrian delicacy made with sprouted lentils and a fiery curry.</p>
+                <a href="zhanzhanit-misal.html">View Recipe</a>
+            </div>
+            
+            <div class="recipe-card" data-name="Ice Cream" data-category="dessert">
+                <img src="ice.jpg">
+                <h2>Ice Cream</h2>
+                <p>Rich and creamy frozen dessert in various flavors to satisfy your sweet cravings.</p>
+                <a href="ice-cream.html">View Recipe</a>
+            </div>
+            
+            <div class="recipe-card" data-name="Pasta" data-category="Snacks">
+                <img src="pasta.jpg">
+                <h2>Pasta</h2>
+                <p>Classic Italian dish made with al dente pasta and a choice of flavorful sauces.</p>
+                <a href="pasta.html">View Recipe</a>
+            </div>
+            
+            <div class="recipe-card" data-name="Biryani" data-category="main-course">
+                <img src="biryani.jpg">
+                <h2>Biryani</h2>
+                <p>Fragrant and spicy rice dish cooked with tender meat and aromatic spices.</p>
+                <a href="biryani.html">View Recipe</a>
+            </div>
+        </div>
+        
+        <div id="notFound" class="hidden">
+            <h2>Oops! Recipe Not Found!</h2>
+            <p>We couldn't find the recipe you're looking for. Try searching for something else!</p>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <p>&copy; 2025 RECIPE HUB PVT LIMITED</p>
+        </div>
+    </footer>
+    
+    <script src="new.js"></script>
+</body>
+</html>
